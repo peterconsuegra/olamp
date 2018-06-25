@@ -995,7 +995,7 @@ pre_setting(){
 			
 			apache=httpd-2.4.33
 			apache_modules_install[1]=modsecurity-2.9.2
-			mysql=mysql-8.0.11
+			mysql=mysql-5.7.22
 			mysql_location=/usr/local/mysql
 			mysql_data_location=/usr/local/mysql/data
 			mysql_root_pass=root

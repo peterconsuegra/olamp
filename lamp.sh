@@ -14,7 +14,14 @@
 # Website:  https://lamp.sh
 # Github:   https://github.com/teddysun/lamp
 
-oinstall=$1
+while getopts i: option 
+do 
+case "${option}" 
+	in
+	i) oinstall=${OPTARG};;
+esac 
+done 
+
 echo oinstall: $oinstall
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
