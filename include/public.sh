@@ -1004,10 +1004,9 @@ pre_setting(){
 			php_modules_install[1]=gmagick-2.0.5RC1
 			phpmyadmin=phpMyAdmin-4.8.2-all-languages
 			
-		else
-			preinstall_lamp
 		fi
 		
+		preinstall_lamp
         install_lamp
     else
         log "Error" "Not supported OS, please change to CentOS 6+ or Debian 7+ or Ubuntu 14+ and try again."
