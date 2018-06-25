@@ -990,16 +990,24 @@ pre_setting(){
             exit 1
         fi
         #preinstall_lamp
-		apache=httpd-2.4.33
-		apache_modules_install[1]=modsecurity-2.9.2
-		mysql=mysql-8.0.11
-		mysql_location=/usr/local/mysql
-		mysql_data_location=/usr/local/mysql/data
-		mysql_root_pass=root
-		php=php-7.2.7
-		php_modules_install[0]=imagick-3.4.3
-		php_modules_install[1]=gmagick-2.0.5RC1
-		phpmyadmin=phpMyAdmin-4.8.2-all-languages
+		
+		if test "$oinstall" = 'default_install'; then
+			
+			apache=httpd-2.4.33
+			apache_modules_install[1]=modsecurity-2.9.2
+			mysql=mysql-8.0.11
+			mysql_location=/usr/local/mysql
+			mysql_data_location=/usr/local/mysql/data
+			mysql_root_pass=root
+			php=php-7.2.7
+			php_modules_install[0]=imagick-3.4.3
+			php_modules_install[1]=gmagick-2.0.5RC1
+			phpmyadmin=phpMyAdmin-4.8.2-all-languages
+			
+		else
+			preinstall_lamp
+		fi
+		
         install_lamp
     else
         log "Error" "Not supported OS, please change to CentOS 6+ or Debian 7+ or Ubuntu 14+ and try again."
